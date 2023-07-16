@@ -1,0 +1,69 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: #34496a;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#webgl {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  z-index: -1;
+}
+
+#webgl2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+  z-index: 2;
+}
+
+#bg-box {
+  width: 802px;
+  height: 602px;
+  position: absolute;
+  z-index: -1;
+}
+
+.button1 {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  background-color: #ee5a05;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+.svg-box {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  z-index: 1;
+}
+.svg-box #robot {
+  cursor: pointer;
+}
