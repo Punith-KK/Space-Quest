@@ -1,0 +1,59 @@
+body {
+  background: #113;
+  background-image: url("https://manzdev.github.io/twitch-solar-system/stars.webp");
+  background-blend-mode: color;
+  background-blend-mode: exclusion;
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+
+.created {
+  background: 
+    url(https://assets.codepen.io/154065/internal/avatars/users/default.png),
+    linear-gradient(to bottom, #884ced, #ec1cce);
+  background-size: 75px 75px, cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2em;
+}
+
+.created span,
+  .created h2,
+  .created p,
+  .created a {
+    font-family: Montserrat;
+    margin: 0;
+  }
+
+.created a,
+  .created p,
+  .created span {
+    color: #fff;    
+  }
+
+.created h2 {
+    font-weight: 700;
+    transform: translate(0, -4px);    
+  }
+
+.created a {
+    -webkit-text-decoration-color: rgba(255,255,255,0.4);
+            text-decoration-color: rgba(255,255,255,0.4);
+  }
+
+.created a:hover {
+    color: #e6e82a;
+  }
