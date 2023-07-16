@@ -1,0 +1,19 @@
+canvas{
+  display: inline-block;
+}
+
+body{
+  background: hsl(275, 53%, 3%);
+  text-align: center;
+}
+
+
+canvas#dst:hover {
+    
+	cursor: none;
+}
+
+span, a{
+  color: #dedede;
+  padding: 5px 10px;
+}

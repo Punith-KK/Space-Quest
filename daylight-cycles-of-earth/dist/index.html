@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🌓Daylight Cycles of Earth</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <h1>
+      <span>
+        Daylight Cycles
+        <i>of</i>
+        <b>Earth</b>
+      </span>
+    </h1>
+
+    <div class="earth-container">
+      <div
+        class="globe"
+        onmouseover="isHover = true"
+        onmousemove="hoverOrbit(event)"
+        onmouseout="isHover = false"
+      >
+        <div id="northLabel" class="day-label north-label"></div>
+        <div id="southLabel" class="day-label south-label"></div>
+      </div>
+      <div class="shadow">
+        <span id="label" class="label"></span>
+      </div>
+    </div>
+
+    <div
+      class="orbit-container"
+      onmouseover="isHover = true"
+      onmousemove="hoverOrbit(event)"
+      onmouseout="isHover = false"
+    >
+      <div class="sun"></div>
+      <div class="earth"></div>
+      <div class="labels">
+        <div>
+          <span> Solstice </span>
+          <span> Equinox </span>
+          <span> Solstice </span>
+        </div>
+        <div>
+          <span> Dec 21<small>st</small> </span>
+          <span>
+            Mar 20<small>th</small>
+            <br />
+            Sep 23<small>rd</small>
+          </span>
+          <span> Jun 21<small>st</small> </span>
+        </div>
+      </div>
+    </div>
+    <a
+      href="../../gravitational-lens-of-a-black-hole/dist/index.html"
+      class="button"
+      >Explore</a
+    >
+
+    <!-- partial -->
+    <script src="./script.js"></script>
+  </body>
+</html>

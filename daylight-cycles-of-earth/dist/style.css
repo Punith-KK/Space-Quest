@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Times New Roman";
+  font-weight: 100;
+  font-style: italic;
+  background: #222;
+}
+
+h1 {
+  margin-top: 5vh;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+h1 i {
+  font-size: 14px;
+  vertical-align: 35%;
+}
+h1 b {
+  font-family: Helvetica;
+}
+h1 span {
+  display: inline-block;
+  border-bottom: 1px solid #fff8;
+  height: 33px;
+  padding: 0 6px;
+}
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+.earth-container {
+  position: relative;
+  margin: 80px 0 120px calc(50% - 190px);
+  height: 380px;
+  background: linear-gradient(90deg, #222 190px, #0000 190px), linear-gradient(#0000 0, #111 0.5%, #111 98.5%, #0000 100%);
+  cursor: pointer;
+}
+@keyframes rotate {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 950px 0;
+  }
+}
+.earth-container .globe {
+  position: absolute;
+  width: 380px;
+  height: 100%;
+  border-radius: 100%;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/6/69/Peters_projection%2C_white_%26_grey.png") 0 0/250% 100%, #008;
+  animation: rotate 40s infinite linear;
+  transform: rotate(calc(-23.4deg * var(--ang)));
+}
+.earth-container .globe:before, .earth-container .globe:after {
+  content: "";
+  position: absolute;
+  inset: 100% 50% -80px;
+  width: 1px;
+  border-left: 2px solid #fff8;
+}
+.earth-container .globe:after {
+  inset: -40px 50% 100%;
+}
+.earth-container .day-label {
+  position: absolute;
+  left: 0;
+  z-index: 10;
+  width: 50px;
+  text-align: right;
+  color: #fff;
+  pointer-events: none;
+}
+.earth-container .day-label:after {
+  content: "";
+  position: absolute;
+  inset: 50% -258.4px 50% 145%;
+  border-bottom: 2px dotted #fff;
+  border-top: 2px dotted #383977;
+  z-index: 10;
+}
+.earth-container .day-label.north-label {
+  top: 8%;
+}
+.earth-container .day-label.south-label {
+  bottom: 10%;
+}
+.earth-container .shadow {
+  position: absolute;
+  width: 380px;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+}
+.earth-container .shadow:before {
+  content: "";
+  position: absolute;
+  inset: -200px 0;
+  clip-path: circle(191px);
+  box-shadow: inset -180px 0 20px 0 #000d;
+  border-radius: 100%;
+}
+.earth-container .shadow:after {
+  content: "";
+  position: absolute;
+  inset: 100% 50% -80px;
+  width: 1px;
+  border-left: 2px solid #fff8;
+}
+.earth-container .shadow .label {
+  position: absolute;
+  height: 16px;
+  width: fit-content;
+  bottom: -55px;
+  left: calc(50% + 8px);
+  color: #fff;
+}
+.earth-container .shadow .label:before {
+  content: "";
+  position: absolute;
+  bottom: 22px;
+  left: -237.5px;
+  padding: 228px;
+  border: 2px dotted #fff8;
+  border-radius: 100%;
+  clip-path: circle(calc( 46.8px * max(var(--ang), -1 * var(--ang)) ) at calc( 50% + ( 46.8px * var(--ang) ) ) 100%);
+}
+
+.orbit-container {
+  position: relative;
+  width: 650px;
+  margin: 0 auto;
+  max-width: calc(100vw - 80px);
+  cursor: pointer;
+}
+.orbit-container:before, .orbit-container:after {
+  content: "";
+  position: absolute;
+  inset: 37px 0 auto 0;
+  height: 8px;
+  border-radius: 100%;
+  border: 2px dashed #fff8;
+}
+.orbit-container:before {
+  border-bottom-width: 0;
+  z-index: -10;
+}
+.orbit-container:after {
+  border-top-width: 0;
+  z-index: 5;
+}
+.orbit-container .earth {
+  position: absolute;
+  top: 10px;
+  left: calc((var(--ang) * 50%) + 50% - 30px);
+  z-index: var(--ang-z);
+  border-radius: 100%;
+  padding: 30px;
+  animation: earthBg linear infinite;
+  animation-duration: 1s;
+  animation-delay: calc((1s * var(--ang-full)) - 1.75s);
+  animation-play-state: paused;
+  pointer-events: none;
+}
+@keyframes earthBg {
+  0% {
+    background: linear-gradient(90deg, #8686bd 50%, #393877 50%);
+  }
+  49.9% {
+    background: linear-gradient(90deg, #8686bd 50%, #393877 50%);
+  }
+  50% {
+    background: linear-gradient(-90deg, #8686bd 50%, #393877 50%);
+  }
+  100% {
+    background: linear-gradient(-90deg, #8686bd 50%, #393877 50%);
+  }
+}
+@keyframes earthFg {
+  0% {
+    transform: scale(1, 1);
+    background: #8686bd;
+  }
+  24.9% {
+    transform: scale(0, 1);
+    background: #8686bd;
+  }
+  25% {
+    transform: scale(0, 1);
+    background: #393877;
+  }
+  49.9% {
+    transform: scale(-1, 1);
+    background: #393877;
+  }
+  50% {
+    transform: scale(1, 1);
+    background: #393877;
+  }
+  74.9% {
+    transform: scale(0, 1);
+    background: #393877;
+  }
+  75% {
+    transform: scale(0, 1);
+    background: #8686bd;
+  }
+  100% {
+    transform: scale(-1, 1);
+    background: #8686bd;
+  }
+}
+.orbit-container .earth:before {
+  content: "";
+  position: absolute;
+  inset: -15px 50%;
+  width: 1px;
+  transform: rotate(-23.4deg);
+  border-left: 1px solid #fff8;
+  z-index: 20;
+}
+.orbit-container .earth:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: earthFg linear infinite;
+  animation-duration: inherit;
+  animation-delay: inherit;
+  animation-play-state: inherit;
+}
+.orbit-container .sun {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  left: calc(50% - 40px);
+  border-radius: 100%;
+  background-color: #dbae2d;
+  padding: 40px;
+  pointer-events: none;
+}
+.orbit-container .labels {
+  padding: 120px 0 40px;
+}
+.orbit-container .labels div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.orbit-container .labels div:first-child span {
+  display: inline-block;
+  font-style: normal;
+  border-bottom: 1px solid #fff8;
+  padding: 0 3px;
+  height: 16px;
+}
+.orbit-container .labels div:last-child {
+  padding: 4px;
+  font-size: 14px;
+}
