@@ -4,7 +4,9 @@
 # Video Demo
 https://github.com/Punith-KK/Space-Quest/assets/118302022/bd6628e1-b96a-4af6-a504-089667921b1d
 
+![Space-Quest_gif](https://github.com/Punith-KK/Space-Quest/assets/118302022/78fc9f68-2d62-4e53-9b8f-46f49a9d788d)
 # Output Images
+
 ![1](https://github.com/Punith-KK/Space-Quest/assets/118302022/90794643-f66e-4d7a-87e8-70bcf8e037da)
 ![2](https://github.com/Punith-KK/Space-Quest/assets/118302022/17a712ed-54ed-4ab4-945d-29d58243cacd)
 ![3](https://github.com/Punith-KK/Space-Quest/assets/118302022/d191fc57-75f7-4672-b401-e80e24ba06dc)
